@@ -8,4 +8,4 @@ After pressing the button.
 try it now !!!
 👇🏻
 
-calculator-with-navbar.netlify.app
+https://calculator-with-navbar.netlify.app/
