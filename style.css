@@ -161,3 +161,102 @@ form .display {
 .equl{
     width: 145px;
 }
+
+.barsIcon{
+    display: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    right: 2rem;
+    cursor:pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 5px) rotate(-45deg);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.reducedMenu div a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.reducedMenu{
+    display: none;
+    position: absolute;
+     top: 80px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter:blur(10px) ;
+    border-radius: 15px;
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ;
+}
+
+.reducedMenu div{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.reducedMenu a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.reducedMenu a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.reducedMenu.open{
+    height: 270px;
+    transition: 0.2s;
+}
+
+
+@media (max-width :990px) {
+    .navMenu{
+        display: none;
+    }
+    .barsIcon{
+        display: block;
+    }
+    .reducedMenu{
+        display: block;
+    }
+}
+
+@media (max-width : 300px) {
+    .reducedMenu{
+        left: 30px;
+        width: unset;
+    }
+}
